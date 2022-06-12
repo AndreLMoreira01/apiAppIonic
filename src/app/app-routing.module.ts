@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'exibir-usuario/:id',
+    loadChildren: () => import('./exibir-usuario/exibir-usuario.module').then( m => m.ExibirUsuarioPageModule)
+  },
 ];
 
 @NgModule({

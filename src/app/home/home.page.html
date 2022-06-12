@@ -8,7 +8,7 @@
 
 <ion-content [fullscreen]="true">
 
-<ion-item *ngFor="let user of listaUsuarios">
+<ion-item *ngFor="let user of listaUsuarios" [routerLink]="'/exibir-usuario/' + user.id">
   <ion-thumbnail slot="start">
     <img [src]="user.avatar">
   </ion-thumbnail>
