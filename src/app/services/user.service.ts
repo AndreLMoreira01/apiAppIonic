@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Usuario } from '../models/Usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,9 @@ export class UserService {
 
     public buscarId(id: number) {
       return this.http.get(`${this.url}/${id}`);
+    }
+
+    public cadastrar(usuario: Usuario){
+return this.http.post(this.url, usuario);
     }
 }

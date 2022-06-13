@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'exibir-usuario/:id',
     loadChildren: () => import('./exibir-usuario/exibir-usuario.module').then( m => m.ExibirUsuarioPageModule)
   },
+  {
+    path: 'cadastrar',
+    loadChildren: () => import('./cadastrar/cadastrar.module').then( m => m.CadastrarPageModule)
+  },
 ];
 
 @NgModule({
