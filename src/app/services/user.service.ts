@@ -11,6 +11,7 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
+  // get
     public buscarTodos(pagina: number) {
       if(pagina <= 0){
         pagina =1;
@@ -20,11 +21,18 @@ export class UserService {
 
     }
 
+    // get por id
     public buscarId(id: number) {
       return this.http.get(`${this.url}/${id}`);
     }
 
+    // post
     public cadastrar(usuario: Usuario){
 return this.http.post(this.url, usuario);
+    }
+
+    // put ou patch
+    public alterar(usuario: Usuario){
+      return this.http.put(`${this.url}/${usuario.id}`, usuario);
     }
 }

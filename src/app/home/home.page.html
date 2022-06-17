@@ -8,7 +8,9 @@
 
 <ion-content [fullscreen]="true">
 
-<ion-item *ngFor="let user of listaUsuarios" [routerLink]="'/exibir-usuario/' + user.id">
+  <ion-item-sliding *ngFor="let user of listaUsuarios">
+
+<ion-item [routerLink]="'/exibir-usuario/' + user.id">
   <ion-thumbnail slot="start">
     <img [src]="user.avatar">
   </ion-thumbnail>
@@ -22,8 +24,15 @@
 ID: {{user.id}}
 </ion-badge>
 
-
 </ion-item>
+
+<ion-item-options side="end">
+  <ion-item-option color="dark" [routerLink]="'/alterar/' + user.id">
+    <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+  </ion-item-option>
+</ion-item-options>
+
+</ion-item-sliding>
 
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
   <ion-fab-button color="dark" routerLink="/cadastrar">

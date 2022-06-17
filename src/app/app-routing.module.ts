@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+// IMPORTANTE
 const routes: Routes = [
   {
     path: 'home',
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'cadastrar',
     loadChildren: () => import('./cadastrar/cadastrar.module').then( m => m.CadastrarPageModule)
+  },
+  {
+    path: 'alterar/:id',
+    loadChildren: () => import('./alterar/alterar.module').then( m => m.AlterarPageModule)
   },
 ];
 
